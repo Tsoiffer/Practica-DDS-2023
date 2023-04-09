@@ -2,12 +2,13 @@ package ar.utn.dds.copiame;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class CopiaMeApp {
-    public static void main(String @NotNull [] args) {
+    public static void main(String @NotNull [] args) throws IOException {
 
         // Valido argumentos del usuario --> Capa de Presentacion
     Path pathLote = Paths.get(args[0]);
@@ -19,6 +20,7 @@ if ( ! Files.exists( pathLote )) {
 //Cargo el Lote del Sistema de archivos --> Utilizo la Capa Persistencia
     Lote lote = new Lote(args[0]);
 lote.cargar();
+        System.out.println("se cargo el lote");
     // ------------------------------------------------
 // Utilizo la capa de Dominio -- NO leo datos de otra fuente -- NO pido ni muestro información
     float umbral = 0.5f;
