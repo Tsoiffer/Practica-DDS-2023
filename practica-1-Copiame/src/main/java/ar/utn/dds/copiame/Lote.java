@@ -6,12 +6,15 @@ public class Lote {
     private String directorio;
     private List<Documento> documentos;
 
-    public Lote(String directorio, List<Documento> documentos) {
+    public Lote(String directorio){
         this.directorio = directorio;
-        this.documentos = documentos;
     }
 
     public void cargar(){
         return;
+    }
+
+    public List<Documento> getDocumentos() {
+        return this.documentos;
     }
 }

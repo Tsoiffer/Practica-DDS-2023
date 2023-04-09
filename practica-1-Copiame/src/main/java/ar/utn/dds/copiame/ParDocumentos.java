@@ -11,6 +11,14 @@ public class ParDocumentos {
         this.documento2 = documento2;
     }
 
+    public Documento getDocumento1() {
+        return documento1;
+    }
+
+    public Documento getDocumento2() {
+        return documento2;
+    }
+
     public boolean esCopia(Float umbral){
         return this.documento1.distancia(this.documento2) <= umbral;
     }

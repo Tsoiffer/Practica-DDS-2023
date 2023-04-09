@@ -26,4 +26,8 @@ public class Documento {
     private CharSequence getContenido() {
         return this.contenido;
     }
+
+    public String getAutor() {
+        return autor;
+    }
 }
