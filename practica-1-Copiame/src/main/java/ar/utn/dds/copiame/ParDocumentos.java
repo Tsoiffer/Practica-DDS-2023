@@ -12,6 +12,6 @@ public class ParDocumentos {
     }
 
     public boolean esCopia(Float umbral){
-        return true;
+        return this.documento1.distancia(this.documento2) <= umbral;
     }
 }
