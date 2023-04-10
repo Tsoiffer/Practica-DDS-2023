@@ -1,6 +1,9 @@
 package ar.utn.dds.copiame;
 
+import ar.utn.dds.copiame.utils.ManejoDeFile;
+
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,16 +20,14 @@ public class Lote {
         this.directorio = directorio;
     }
 
+    //Mezclo capa de presentacion en cargar Lote para comprobar correcto funcionamiento
     public void cargar() throws IOException {
         Path dirpath = Paths.get(directorio);
-        System.out.println(dirpath);
+        System.out.println("Buscando archivos de la carpeta: "+dirpath);
         List<Path> archivos = Files.list(dirpath).collect(Collectors.toList()) ;
-        archivos.stream().map( (Path archivo) => {});
-        String cadena;
-        FileReader f = new FileReader(archivo);
-        BufferedReader b = new BufferedReader(f);
-        System.out.println(archivos.get(0).getFileName());
-        System.out.println(archivos.get(0).getFileName());
+        System.out.println("Se encontraron "+archivos.size()+ " archivos");
+        this.documentos = ManejoDeFile.documentosDeLosArchivos( archivos );
+        System.out.println("se cargo el lote");
         return;
     }
 
